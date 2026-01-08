@@ -19,6 +19,7 @@ export default function CalenderData({
   food,
   finance,
 }: calenderDataProps) {
+  const total = monthlyPay + allowance;
   return (
     <>
       <div className="self-stretch bg-white rounded-tl-lg rounded-tr-lg inline-flex flex-col justify-start items-start">
@@ -41,7 +42,7 @@ export default function CalenderData({
                   +
                 </div>
                 <div className="justify-start text-indigo-500 text-2xl font-semibold font-['Pretendard'] leading-9">
-                  {monthlyPay}
+                  {monthlyPay.toLocaleString("ko-Kr")}
                 </div>
               </div>
               <div className="justify-start text-indigo-500 text-2xl font-semibold font-['Pretendard'] leading-9">
@@ -70,7 +71,7 @@ export default function CalenderData({
                   +
                 </div>
                 <div className="justify-start text-indigo-500 text-2xl font-semibold font-['Pretendard'] leading-9">
-                  {allowance}
+                  {allowance.toLocaleString("ko-Kr")}
                 </div>
               </div>
               <div className="justify-start text-indigo-500 text-2xl font-semibold font-['Pretendard'] leading-9">
@@ -99,7 +100,7 @@ export default function CalenderData({
                   -
                 </div>
                 <div className="justify-start text-red-500 text-2xl font-semibold font-['Pretendard'] leading-9">
-                  {food}
+                  {food.toLocaleString("ko-Kr")}
                 </div>
               </div>
               <div className="justify-start text-red-500 text-2xl font-semibold font-['Pretendard'] leading-9">
@@ -128,7 +129,7 @@ export default function CalenderData({
                   -
                 </div>
                 <div className="justify-start text-red-500 text-2xl font-semibold font-['Pretendard'] leading-9">
-                  {finance}
+                  {finance.toLocaleString("ko-Kr")}
                 </div>
               </div>
               <div className="justify-start text-red-500 text-2xl font-semibold font-['Pretendard'] leading-9">
@@ -164,7 +165,7 @@ export default function CalenderData({
               </div>
               <div className="flex justify-start items-center gap-1">
                 <div className="justify-start text-gray-500 text-xl font-normal font-['Pretendard'] leading-8">
-                  100,999,999,998
+                  {total.toLocaleString("ko-Kr")}
                 </div>
                 <div className="justify-start text-gray-500 text-xl font-normal font-['Pretendard'] leading-8">
                   원
