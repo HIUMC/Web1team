@@ -4,11 +4,19 @@ interface CategoryProps {
   icon: string;
   title: string;
   alt: string;
+  className: string;
 }
 
-export default function SettingCategory({ icon, title, alt }: CategoryProps) {
+export default function SettingCategory({
+  icon,
+  title,
+  alt,
+  className,
+}: CategoryProps) {
   return (
-    <div className="w-60 px-7 py-6 bg-white rounded-lg outline outline-1 outline-offset-[-1px] outline-sky-300 inline-flex flex-col justify-start items-start gap-2.5">
+    <div
+      className={`w-60 px-7 py-6 bg-white rounded-lg border  ${className} inline-flex flex-col justify-start items-start gap-2.5`}
+    >
       <div className="self-stretch inline-flex justify-between items-center">
         <div className="flex justify-start items-center gap-3">
           <img src={icon} alt={alt} />
