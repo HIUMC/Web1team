@@ -1,7 +1,38 @@
 import { Header } from "../components/common/Header";
 import MainIcon from "../assets/main_icon.svg";
+import { useNavigate } from "react-router-dom";
+import { validateSignin, type UserSigninInformation } from "../utils/validate";
+import useForm from "../hooks/useForm";
+import { useAuth } from "../context/AuthContext";
+import { useEffect } from "react";
 
 export default function LoginPage() {
+    const navigate = useNavigate();
+    const { login, isLogin } = useAuth();
+
+    const {values, errors, touched, getInputProps} = useForm<UserSigninInformation>({
+        initialValue: {
+            nickname: "",
+            password: "",
+        },
+        validate: validateSignin
+    });
+
+    const handleSubmit = () => {
+        login({ nickname: values.nickname });
+        navigate("/");
+    };
+
+    const isDisabled =
+        Object.values(errors || {}).some(error => error.length > 0) ||
+        Object.values(values).some(value => value === "")
+    
+    useEffect(() => {
+        if (isLogin) {
+            navigate("/");
+        }
+    }, [isLogin]);
+
   return (
     <>
       <Header />
@@ -14,27 +45,34 @@ export default function LoginPage() {
         </div>
         <div className="pt-[69px] flex flex-col gap-[21px] ">
           <input
+            {...getInputProps("nickname")}
+            type={"nickname"}
             placeholder="닉네임"
             className=" w-[480px] h-[54px] bg-zinc-300 rounded-[10px] pl-[20px] text-2xl font-medium text-black placeholder:text-2xl placeholder:font-medium placeholder:text-gray-500 placeholder:opacity-80 focus:outline-none"
           />
           <input
+            {...getInputProps("password")}
+            type={"password"}
             placeholder="비밀번호(6자리)"
             className=" w-[480px] h-[54px] bg-zinc-300 rounded-[10px] pl-[20px] text-2xl font-medium text-black placeholder:text-2xl placeholder:font-medium placeholder:text-gray-500 placeholder:opacity-80 focus:outline-none"
           />
         </div>
         <div className="pt-[69px]">
-          <button
-            className="w-[480px] h-14 p-2.5 bg-indigo-500 rounded-[100px] inline-flex justify-center items-center cursor-pointer"
-            type="submit"
-          >
-            <div
-              className="opacity-80 text-right justify-center text-white text-xl font-semibold "
-              style={{ fontFamily: "Pretendard Variable" }}
+            <button
+                type="button"
+                onClick={handleSubmit}
+                disabled={isDisabled}
+                className={`w-[480px] h-14 p-2.5 rounded-[100px] flex justify-center items-center text-white text-xl font-semibold transition bg-indigo-500
+                    ${isDisabled ? "cursor-not-allowed":" hover:bg-indigo-600 cursor-pointer"}`
+                }
+                style={{ fontFamily: "Pretendard Variable" }}
             >
-              로그인
-            </div>
-          </button>
+            <span className={isDisabled ? "text-white opacity-80" : "text-white"}>
+                로그인
+            </span>
+            </button>
         </div>
+
       </div>
     </>
   );
