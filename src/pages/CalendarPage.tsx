@@ -3,7 +3,7 @@ import CalenderData from "../components/CalenderData";
 
 export const CalendarPage = () => {
   return (
-    <div className="flex gap-8">
+    <div className="flex flex-col gap-8">
       <Calendar />
       <CalenderData />
     </div>
