@@ -1,12 +1,28 @@
+import { createBrowserRouter, RouterProvider, type RouteObject } from 'react-router-dom'
 import './App.css'
-import { Header } from './components/layout/Header'
+import { HomePage } from './pages/HomePage';
+import { LoginPage } from './pages/LoginPage';
+import { HomeLayout } from './layouts/HomeLayout';
+
+const router = createBrowserRouter([
+  {
+    path: "/login",
+    element: <LoginPage />,
+  },
+  {
+    element: <HomeLayout />,
+    children: [
+      {
+        path: "/",
+        element: <HomePage />,
+      },
+    ],
+  },
+])
 
 function App() {
-
   return (
-    <>
-      <Header/>
-    </>
+    <RouterProvider router={router}/>
   )
 }
 
