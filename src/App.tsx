@@ -4,6 +4,8 @@ import LoginPage from './pages/LoginPage';
 import { ProtectedLayout } from './layouts/ProtectedLayout';
 import { AuthProvider } from './context/AuthContext';
 import { CalendarPage } from './pages/CalendarPage';
+import MonthlyStats from './pages/MonthlyStats';
+import SettingPage from './pages/SettingPage';
 
 const publicRoutes: RouteObject[] = [
   {
@@ -20,6 +22,14 @@ const protectedRoutes: RouteObject[] = [
       {
         index: true,
         element: <CalendarPage />,
+      },
+      {
+        path: "monthly_status",
+        element: <MonthlyStats />,
+      },
+      {
+        path: "setting",
+        element: <SettingPage />,
       },
     ],
   },
