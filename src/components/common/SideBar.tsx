@@ -5,7 +5,7 @@ import SettingIcon from "../../assets/icons/Setting.svg";
 export default function SideBar() {
   return (
     <>
-      <div className="w-60 h-[1646px] bg-white inline-flex flex-col justify-start items-start gap-2.5 pt-[82px]">
+      <div className="w-60 h-[1646px] bg-white inline-flex flex-col justify-start items-start gap-2.5">
         <div className="w-60 flex flex-col justify-start items-start">
           <button className="self-stretch pl-6 py-4 bg-gray-200 inline-flex justify-start items-center gap-2 cursor-pointer">
             <img src={CalenderIcon} alt="달력 아이콘" />
