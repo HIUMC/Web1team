@@ -19,10 +19,9 @@ export const ProtectedLayout = () => {
             <SideBar />
             <main className="flex-1 flex flex-col items-center gap-[120px]">
               <Outlet />
+              <Footer />
             </main>
           </div>
-    
-          <Footer />
         </div>
   );
 };
