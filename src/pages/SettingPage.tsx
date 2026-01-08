@@ -16,6 +16,7 @@ import tabletCardIcon from "../assets/icons/tabler_credit-card-pay.svg";
 import billIcon from "../assets/icons/tdesign_bill.svg";
 import trashBinGray from "../assets/icons/trashBinGray.svg";
 import plusIcon from "../assets/icons/plus.svg";
+import SettingCategory from "../components/SettingCategory";
 
 export default function SettingPage() {
   const [isLight, setIsLight] = useState(true);
@@ -83,142 +84,77 @@ export default function SettingPage() {
             </div>
             <div className="pl-[64px] w-[960px] inline-flex flex-col justify-start items-start gap-2">
               <div className="self-stretch inline-flex justify-start items-center gap-2">
-                <div className="w-60 px-7 py-6 bg-white rounded-lg outline outline-1 outline-offset-[-1px] outline-sky-300 inline-flex flex-col justify-start items-start gap-2.5">
-                  <div className="self-stretch inline-flex justify-between items-center">
-                    <div className="flex justify-start items-center gap-3">
-                      <img src={bagIcon} alt="월급 아이콘" />
-                      <div className="justify-start text-zinc-700 text-lg font-semibold font-['Pretendard'] leading-7">
-                        월급
-                      </div>
-                    </div>
-                    <div className="w-6 h-6" />
-                    <img src={trashBinGray} alt="휴지통" />
-                  </div>
-                </div>
-                <div className="w-60 px-7 py-6 bg-white rounded-lg outline outline-1 outline-offset-[-1px] outline-amber-300 inline-flex flex-col justify-start items-start gap-2.5">
-                  <div className="self-stretch inline-flex justify-between items-center">
-                    <div className="flex justify-start items-center gap-3">
-                      <img src={moneyBagIcon} alt="용돈 아이콘" />
-                      <div className="justify-start text-zinc-700 text-lg font-semibold font-['Pretendard'] leading-7">
-                        용돈
-                      </div>
-                    </div>
-                    <div className="w-6 h-6" />
-                    <img src={trashBinGray} alt="휴지통" />
-                  </div>
-                </div>
-                <div className="w-60 px-7 py-6 bg-white rounded-lg outline outline-1 outline-offset-[-1px] outline-orange-400 inline-flex flex-col justify-start items-start gap-2.5">
-                  <div className="self-stretch inline-flex justify-between items-center">
-                    <div className="flex justify-start items-center gap-3">
-                      <img src={foodIcon} alt="식비 아이콘" />
-                      <div className="justify-start text-zinc-700 text-lg font-semibold font-['Pretendard'] leading-7">
-                        식비
-                      </div>
-                    </div>
-                    <div className="w-6 h-6" />
-                    <img src={trashBinGray} alt="휴지통" />
-                  </div>
-                </div>
-                <div className="w-60 px-7 py-6 bg-white rounded-lg outline outline-1 outline-offset-[-1px] outline-yellow-800 inline-flex flex-col justify-start items-start gap-2.5">
-                  <div className="self-stretch inline-flex justify-between items-center">
-                    <div className="flex justify-start items-center gap-3">
-                      <img src={coffeeIcon} alt="커피 아이콘" />
-                      <div className="justify-start text-zinc-700 text-lg font-semibold font-['Pretendard'] leading-7">
-                        커피
-                      </div>
-                    </div>
-                    <div className="w-6 h-6" />
-                    <img src={trashBinGray} alt="휴지통" />
-                  </div>
-                </div>
+                <SettingCategory
+                  title="월급"
+                  icon={bagIcon}
+                  alt="식비 아이콘"
+                  className="border-[#6DD0E4]"
+                />
+                <SettingCategory
+                  title="용돈"
+                  icon={moneyBagIcon}
+                  alt="용돈 아이콘"
+                  className="border-[#E6DC54]"
+                />
+                <SettingCategory
+                  title="식비"
+                  icon={foodIcon}
+                  alt="식비 아이콘"
+                  className="border-[#F2A44B]"
+                />
+                <SettingCategory
+                  title="커피"
+                  icon={coffeeIcon}
+                  alt="커피 아이콘"
+                  className="border-[#8F5A15]"
+                />
               </div>
               <div className="self-stretch inline-flex justify-start items-center gap-2">
-                <div className="w-60 px-7 py-6 bg-white rounded-lg outline outline-1 outline-offset-[-1px] outline-violet-400 inline-flex flex-col justify-start items-start gap-2.5">
-                  <div className="self-stretch inline-flex justify-between items-center">
-                    <div className="flex justify-start items-center gap-3">
-                      <img src={toiletPaperIcon} alt="생활용품 아이콘" />
-                      <div className="justify-start text-zinc-700 text-lg font-semibold font-['Pretendard'] leading-7">
-                        생활용품
-                      </div>
-                    </div>
-                    <div className="w-6 h-6" />
-                    <img src={trashBinGray} alt="휴지통" />
-                  </div>
-                </div>
-                <div className="w-60 px-7 py-6 bg-white rounded-lg outline outline-1 outline-offset-[-1px] outline-emerald-300 inline-flex flex-col justify-start items-start gap-2.5">
-                  <div className="self-stretch inline-flex justify-between items-center">
-                    <div className="flex justify-start items-center gap-3">
-                      <img src={billIcon} alt="공과금 아이콘" />
-                      <div className="justify-start text-zinc-700 text-lg font-semibold font-['Pretendard'] leading-7">
-                        공과금
-                      </div>
-                    </div>
-                    <div className="w-6 h-6" />
-                    <img src={trashBinGray} alt="휴지통" />
-                  </div>
-                </div>
-                <div className="w-60 px-7 py-6 bg-white rounded-lg outline outline-1 outline-offset-[-1px] outline-pink-300 inline-flex flex-col justify-start items-start gap-2.5">
-                  <div className="self-stretch inline-flex justify-between items-center">
-                    <div className="flex justify-start items-center gap-3">
-                      <img src={tabletCardIcon} alt="이체/인출 아이콘" />
-                      <div className="justify-start text-zinc-700 text-lg font-semibold font-['Pretendard'] leading-7">
-                        이체/인출
-                      </div>
-                    </div>
-                    <div className="w-6 h-6" />
-                    <img src={trashBinGray} alt="휴지통" />
-                  </div>
-                </div>
-                <div className="w-60 px-7 py-6 bg-white rounded-lg outline outline-1 outline-offset-[-1px] outline-red-500 inline-flex flex-col justify-start items-start gap-2.5">
-                  <div className="self-stretch inline-flex justify-between items-center">
-                    <div className="flex justify-start items-center gap-3">
-                      <img src={alcholIcon} alt="유흥 아이콘" />
-                      <div className="justify-start text-zinc-700 text-lg font-semibold font-['Pretendard'] leading-7">
-                        유흥
-                      </div>
-                    </div>
-                    <div className="w-6 h-6" />
-                    <img src={trashBinGray} alt="휴지통" />
-                  </div>
-                </div>
+                <SettingCategory
+                  title="생활용품"
+                  icon={toiletPaperIcon}
+                  alt="생활용품 아이콘"
+                  className="border-[#B592E9]"
+                />
+                <SettingCategory
+                  title="공과금"
+                  icon={tabletCardIcon}
+                  alt="공과금 아이콘"
+                  className="border-[#74E4BB]"
+                />
+                <SettingCategory
+                  title="이체/인출"
+                  icon={foodIcon}
+                  alt="이체/인출 아이콘"
+                  className="border-[#E898D7]"
+                />
+                <SettingCategory
+                  title="유흥"
+                  icon={alcholIcon}
+                  alt="유흥 아이콘"
+                  className="border-[#C5424B]"
+                />
               </div>
               <div className="self-stretch inline-flex justify-start items-center gap-2">
-                <div className="w-60 px-7 py-6 bg-white rounded-lg outline outline-1 outline-offset-[-1px] outline-green-500 inline-flex flex-col justify-start items-start gap-2.5">
-                  <div className="self-stretch inline-flex justify-between items-center">
-                    <div className="flex justify-start items-center gap-3">
-                      <img src={moneyIcon} alt="금융 아이콘" />
-                      <div className="justify-start text-zinc-700 text-lg font-semibold font-['Pretendard'] leading-7">
-                        금융
-                      </div>
-                    </div>
-                    <div className="w-6 h-6" />
-                    <img src={trashBinGray} alt="휴지통" />
-                  </div>
-                </div>
-                <div className="w-60 px-7 py-6 bg-white rounded-lg outline outline-1 outline-offset-[-1px] outline-blue-600 inline-flex flex-col justify-start items-start gap-2.5">
-                  <div className="self-stretch inline-flex justify-between items-center">
-                    <div className="flex justify-start items-center gap-3">
-                      <img src={carIcon} alt="교통/차량 아이콘" />
-                      <div className="justify-start text-zinc-700 text-lg font-semibold font-['Pretendard'] leading-7">
-                        교통/차량
-                      </div>
-                    </div>
-                    <div className="w-6 h-6" />
-                    <img src={trashBinGray} alt="휴지통" />
-                  </div>
-                </div>
-                <div className="w-60 px-7 py-6 bg-white rounded-lg outline outline-1 outline-offset-[-1px] outline-zinc-400 inline-flex flex-col justify-start items-start gap-2.5">
-                  <div className="self-stretch inline-flex justify-between items-center">
-                    <div className="flex justify-start items-center gap-3">
-                      <img src={menuIcon} alt="기타 아이콘" />
-                      <div className="justify-start text-zinc-700 text-lg font-semibold font-['Pretendard'] leading-7">
-                        기타
-                      </div>
-                    </div>
-                    <div className="w-6 h-6" />
-                    <img src={trashBinGray} alt="휴지통" />
-                  </div>
-                </div>
+                <SettingCategory
+                  title="금융"
+                  icon={moneyIcon}
+                  alt="금융 아이콘"
+                  className="border-[#42C563]"
+                />
+                <SettingCategory
+                  title="교통/차량"
+                  icon={carIcon}
+                  alt="교통/차량 아이콘"
+                  className="border-[#4274C5]"
+                />
+                <SettingCategory
+                  title="기타"
+                  icon={menuIcon}
+                  alt="기타 아이콘"
+                  className="border-[#A9ACB2]"
+                />
+
                 <div className="w-60 h-20 px-7 py-6 bg-white rounded-lg inline-flex flex-col justify-center items-center gap-2.5">
                   <div className="w-8 h-8 relative">
                     <div className="w-8 h-8 left-0 top-0 absolute" />
